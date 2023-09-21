@@ -31,8 +31,8 @@ require('dotenv').config({
  * for example: if the APP_ENV is staging, the bundle id will be com.cumulus-app.staging
  */
 
-const BUNDLE_ID = 'com.cumulus-app'; // ios bundle id
-const PACKAGE = 'com.cumulus-app'; // android package name
+const BUNDLE_ID = 'com.cumulus.app'; // ios bundle id
+const PACKAGE = 'com.cumulus.app'; // android package name
 const NAME = 'cumulus-app'; // app name
 const EXPO_ACCOUNT_OWNER = 'expo-owner'; // expo account owner
 
