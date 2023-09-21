@@ -28,14 +28,20 @@ export const FeedNavigator = () => {
       <Stack.Group
         screenOptions={{
           // eslint-disable-next-line react/no-unstable-nested-components
-          headerRight: () => <GoToAddPost />,
+          headerRight: () => <GoToAddPost />
         }}
       >
         <Stack.Screen name="Feed" component={Feed} />
         <Stack.Screen name="Post" component={Post} />
       </Stack.Group>
 
-      <Stack.Screen name="AddPost" component={AddPost} />
+      <Stack.Screen
+        name="AddPost"
+        component={AddPost}
+        options={{
+          headerTitle: 'Add Todo'
+        }}
+      />
     </Stack.Navigator>
   );
 };

@@ -8,3 +8,5 @@ ios/
 .expo-shared
 docs/
 cli/
+
+amplify-codegen-temp\models

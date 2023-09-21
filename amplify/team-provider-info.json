@@ -10,6 +10,11 @@
       "StackName": "amplify-cumulusapp-dev-164009",
       "StackId": "arn:aws:cloudformation:us-east-1:596186919517:stack/amplify-cumulusapp-dev-164009/28c8be40-5895-11ee-8004-0ae51f338bd5",
       "AmplifyAppId": "d1x1e6x2jf93il"
+    },
+    "categories": {
+      "api": {
+        "cumulusapp": {}
+      }
     }
   }
 }

@@ -1,7 +1,9 @@
+import { API, graphqlOperation } from 'aws-amplify';
 import type { AxiosError } from 'axios';
 import { createQuery } from 'react-query-kit';
 
-import { client } from '../common';
+import { listTodos } from '@/graphql/queries';
+
 import type { Post } from './types';
 
 type Response = Post[];
@@ -9,9 +11,12 @@ type Variables = void; // as react-query-kit is strongly typed, we need to speci
 
 export const usePosts = createQuery<Response, Variables, AxiosError>({
   primaryKey: 'posts', // we recommend using  endpoint base url as primaryKey
-  queryFn: ({ queryKey: [primaryKey] }) => {
+  queryFn: async ({ queryKey: [primaryKey] }) => {
     // in case if variables is needed, we can use destructuring to get it from queryKey array like this: ({ queryKey: [primaryKey, variables] })
     // primaryKey is 'posts' in this case
-    return client.get(`${primaryKey}`).then((response) => response.data.posts);
+    const todoData = await API.graphql(graphqlOperation(listTodos));
+    const todos = todoData.data.listTodos.items;
+    console.log(todos);
+    return todos;
   },
 });

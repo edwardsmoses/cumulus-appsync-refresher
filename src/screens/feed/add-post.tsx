@@ -8,54 +8,48 @@ import { useAddPost } from '@/api';
 import { Button, ControlledInput, showErrorMessage, View } from '@/ui';
 
 const schema = z.object({
-  title: z.string().min(10),
-  body: z.string().min(120),
+  body: z.string().min(120)
 });
 
 type FormType = z.infer<typeof schema>;
 
 export const AddPost = () => {
   const { control, handleSubmit } = useForm<FormType>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema)
   });
   const { mutate: addPost, isLoading } = useAddPost();
 
   const onSubmit = (data: FormType) => {
     console.log(data);
+
     addPost(
       { ...data, userId: 1 },
       {
         onSuccess: () => {
           showMessage({
             message: 'Post added successfully',
-            type: 'success',
+            type: 'success'
           });
           // here you can navigate to the post list and refresh the list data
           //queryClient.invalidateQueries(usePosts.getKey());
         },
         onError: () => {
           showErrorMessage('Error adding post');
-        },
+        }
       }
     );
   };
   return (
     <View className="flex-1 p-4 ">
       <ControlledInput
-        name="title"
-        label="Title"
-        control={control}
-        testID="title"
-      />
-      <ControlledInput
         name="body"
-        label="Content"
+        label="What are your plans?"
         control={control}
         multiline
         testID="body-input"
       />
       <Button
-        label="Add Post"
+        label="Add Todo"
         loading={isLoading}
         onPress={handleSubmit(onSubmit)}
         testID="add-post-button"
