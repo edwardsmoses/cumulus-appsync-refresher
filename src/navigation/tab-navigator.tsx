@@ -6,12 +6,12 @@ import type { ComponentType } from 'react';
 import * as React from 'react';
 import type { SvgProps } from 'react-native-svg';
 
-import { Settings, Style } from '@/screens';
+import { Settings } from '@/screens';
 import {
   colors,
   Feed as FeedIcon,
   Settings as SettingsIcon,
-  Style as StyleIcon,
+  Style as StyleIcon
 } from '@/ui';
 
 import { FeedNavigator } from './feed-navigator';
@@ -37,7 +37,7 @@ const Tab = createBottomTabNavigator<TabParamList>();
 const tabsIcons: TabIconsType = {
   Style: (props: SvgProps) => <StyleIcon {...props} />,
   FeedNavigator: (props: SvgProps) => <FeedIcon {...props} />,
-  Settings: (props: SvgProps) => <SettingsIcon {...props} />,
+  Settings: (props: SvgProps) => <SettingsIcon {...props} />
 };
 
 export type TabList<T extends keyof TabParamList> = {
@@ -47,20 +47,15 @@ export type TabList<T extends keyof TabParamList> = {
 
 const tabs: TabType[] = [
   {
-    name: 'Style',
-    component: Style,
-    label: 'Style',
-  },
-  {
     name: 'FeedNavigator',
     component: FeedNavigator,
-    label: 'Feed',
+    label: 'Feed'
   },
   {
     name: 'Settings',
     component: Settings,
-    label: 'Settings',
-  },
+    label: 'Settings'
+  }
 ];
 
 type BarIconType = {
@@ -81,12 +76,12 @@ export const TabNavigator = () => {
         tabBarInactiveTintColor:
           colorScheme === 'dark' ? colors.charcoal[400] : colors.neutral[400],
         // eslint-disable-next-line react/no-unstable-nested-components
-        tabBarIcon: ({ color }) => <BarIcon name={route.name} color={color} />,
+        tabBarIcon: ({ color }) => <BarIcon name={route.name} color={color} />
       })}
     >
       <Tab.Group
         screenOptions={{
-          headerShown: false,
+          headerShown: false
         }}
       >
         {tabs.map(({ name, component, label }) => {
@@ -97,7 +92,7 @@ export const TabNavigator = () => {
               component={component}
               options={{
                 title: label,
-                tabBarTestID: `${name}-tab`,
+                tabBarTestID: `${name}-tab`
               }}
             />
           );
