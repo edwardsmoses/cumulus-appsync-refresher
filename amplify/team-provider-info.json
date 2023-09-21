@@ -14,6 +14,10 @@
     "categories": {
       "api": {
         "cumulusapp": {}
+      },
+      "auth": {
+        "cumulusappb89f27ae": {},
+        "userPoolGroups": {}
       }
     }
   }

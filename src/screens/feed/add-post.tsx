@@ -8,7 +8,7 @@ import { useAddPost } from '@/api';
 import { Button, ControlledInput, showErrorMessage, View } from '@/ui';
 
 const schema = z.object({
-  body: z.string().min(120)
+  body: z.string().min(5)
 });
 
 type FormType = z.infer<typeof schema>;
