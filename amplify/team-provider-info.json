@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cumulusapp-dev-164009-authRole",
+      "UnauthRoleArn": "arn:aws:iam::596186919517:role/amplify-cumulusapp-dev-164009-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::596186919517:role/amplify-cumulusapp-dev-164009-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cumulusapp-dev-164009-deployment",
+      "UnauthRoleName": "amplify-cumulusapp-dev-164009-unauthRole",
+      "StackName": "amplify-cumulusapp-dev-164009",
+      "StackId": "arn:aws:cloudformation:us-east-1:596186919517:stack/amplify-cumulusapp-dev-164009/28c8be40-5895-11ee-8004-0ae51f338bd5",
+      "AmplifyAppId": "d1x1e6x2jf93il"
+    }
+  }
+}
